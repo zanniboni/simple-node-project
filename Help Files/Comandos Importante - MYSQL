@@ -1,0 +1,8 @@
+--- Conectar ao banco de dados pelo CMD
+mysql -h localhost -u root -p
+
+--- Comandos uteis
+USE [databese] - Mudar para banco de dados informado
+DESCRIBE [table] - Mostra as informações da tabela
+SHOW TABLES - Mostra todas as tabelas
+SHOW DATABASES- Mostra todas as DB

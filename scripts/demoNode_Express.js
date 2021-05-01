@@ -16,9 +16,9 @@ const express = require('express');
 const app = express();
 
 //Rota para a página inicial
-app.get("/", function(req, res){
-    res.send("Olá!");
-});
+// app.get("/", function(req, res){
+//     res.send("Olá!");
+// });
 
 //Rota para a página sobre
 app.get("/sobre", function(req, res){
@@ -31,6 +31,14 @@ app.get("/ola/:cargo/:nome", function(req, res){
     //É possivel acessar os parametros da requisição
     res.send("Nome: " + req.params.nome + " Cargo:" + req.params.cargo);
 })
+
+
+//Load na página HTML index
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/html/index.html');
+    console.log("cheguei!");
+});
+
 //Função listen para deixar servidor online
 app.listen(8081, function(){
     console.log("Servidor rodando");
