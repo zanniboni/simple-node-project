@@ -35,7 +35,7 @@ app.get("/ola/:cargo/:nome", function(req, res){
 
 //Load na página HTML index
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/html/index.html');
     console.log("cheguei!");
 });
 
