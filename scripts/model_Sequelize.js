@@ -24,7 +24,7 @@ const Postagem = sequelize.define('postagens', {
 })
 
 // ------------- Sincronizar o model 'Postagem' com o MYSQL (Irá criar a tabela caso não exista) 
-// ------------- Postagem.sync({force: true});
+// ------------- Postagem.sync({force: true}); // Se o sync for executado mais de uma vez a tabela é recriada e as inf. são perdidas
 
 // ----- Inserir registro através do modelo 'Postagem' - Irá executar um insert através do SQL
 // Postagem.create({
@@ -49,7 +49,7 @@ const Usuario = sequelize.define('usuarios', {
 })
 
 // ------------- Sincronizar o model 'Usuario' com o MYSQL (Irá criar a tabela caso não exista)
-// ------------- Usuario.sync({force: true});
+// ------------- Usuario.sync({force: true}); 
 
 // ------- Inserir registro através do modelo 'Usuario' - Irá executar um insert através do SQL
 // Usuario.create({
