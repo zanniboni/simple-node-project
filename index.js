@@ -1,3 +1,4 @@
+//Instanciado o express para utilização
 const express = require('express')
 const app = express()
 
@@ -8,6 +9,7 @@ const handlebars = require('express-handlebars')
 //Instanciando o body-parser (Está depreciado) -- É utilizado o express 
 //const bodyParser = require('body-parser')
 
+//Instaciado modelo de posts para utilizar funções de get e post no banco de dados
 const Post = require('./models/Posts')
 
 //Config 
@@ -21,17 +23,21 @@ const Post = require('./models/Posts')
 
 // Rotas
 
+    //Irá enviar todos as informações dos posts para a home
     app.get('/' , (req , res)=>{
         Post.findAll({order: [['id', 'DESC']]}).then(function(posts){
             res.render('home', {posts: posts})
         })
     })
 
+    //Irá renderizar o formulário na rota /cad
     app.get('/cad' , (req , res)=>{
     
        res.render('formulario')
     
     })
+
+    //Post irá inserir os registros do formulário vindos da rota add
     app.post('/add' , (req , res)=>{
         Post.create({
             titulo: req.body.titulo,
@@ -44,6 +50,7 @@ const Post = require('./models/Posts')
        
     })
 
+    //Get responsável por deletar o post no banco de dados MySQL
     app.get('/deletar/:id' , (req , res)=>{
     
        Post.destroy({where: {'id': req.params.id}}).then(function(){

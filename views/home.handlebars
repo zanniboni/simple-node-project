@@ -1,5 +1,7 @@
 <h1>Lista de posts</h1>
-
+{{!-- O #each irá executar uma função de for each para todos os posts recebidos na página home
+A página home, sempre que acessada, irá receber enviar os parâmetros do modelo "Post.js", printando na tela todo o conteudo selecionado da tabela
+É possivel acessar qualquer campo através da função dataValues.nomeDoCampo --}}
 {{#each posts}}
     <small>{{dataValues.createdAt}}</small>
     <h1>{{dataValues.titulo}}</h1>
